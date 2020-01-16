@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="PersonalBudget.exe" version="1.0.0.0" publicKeyToken="019a497f8667c259" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="PersonalBudget" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="PersonalBudget.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="5196496">
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>7W69dJBS+QGPZplnGuVGmt7fCGz4sb1CVrvpxOf2/wU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="621264">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ob9snjgg6D9D6fIN19mwozYqkxRvCv4LEzAYXi1RsMs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PersonalBudget.exe" size="1468888">
+      <assemblyIdentity name="PersonalBudget" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>gyPnW3XmMlR6PtuG8zd8rLhAz4WNJvC5RDTVorpKg8s=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="DataAccess\BudgetModel.Context.tt" size="22935">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>iDwCN5gvQdNsgar7IosyK8hJNKK1VPv3sIZeQaf4aHo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DataAccess\BudgetModel.tt" size="25280">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>W2kZDBxo3nVTKNirbjCM+Rorfjii46xFDsPdi8IW0BA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PersonalBudget.exe.config" size="1343">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xYu/9Sqok5LImhu9dEXzfcVibGRMoQ+P8fWNrSSMQtc=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-RV1FOGP\Nik" issuerKeyHash="462f631b9aa2e02316aeab43668393e012a31d6e" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>/THxjbcu6tuuXPROqibu2jL9qWUfJzJ7Ceoh717nLuI=</DigestValue></Reference></SignedInfo><SignatureValue>P0+DsnHNWPdJNaz806nP2pkq6IWm4KAzZbZPha9kN/1r2muHAGvY06qjye+HY/BlWE1YUXsADOLmIIY5YOWmb09B+hIN18Tu5iPOxFBnwBWGzrknEqdKhNZv5IjN2hSwFHrWmfuYZ7UZ/dP4fzgQlWELl7roEMQ+6TIT7CAo21c=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>ul6C/Mx3hd4dV5bk3mOr3csEBL7gLb2Ty5nReCBL1Tz8cVS88DGA6fU3KdqYEJHREaJ/szcjxjxmgxw9MiqquGLDFcI9hLMCj2mo+siTa7WVYq8kgnjZrqGravnoKtMpPVtoOqLOxaGd0FftKh/0lOzKbpzalQih/b4MKGgpD6U=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="e22ee75eef21ea097b32271f65a9fd32daee26aa4ef45caedbea2eb78df131fd" Description="" Url=""><as:assemblyIdentity name="PersonalBudget.exe" version="1.0.0.0" publicKeyToken="019a497f8667c259" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-RV1FOGP\Nik</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>OlY0FTuIJNyeScfJ7x4syfEYv7lSFMFW0w0fD4HyfnM=</DigestValue></Reference></SignedInfo><SignatureValue>P7U1gr9sUDBuv8M+HZgekGUtjGnpVc+ft6O5RH4MMkEXk0UQk0Dn794VvyOC09CC5WzR6h8WfG9BD4BUTnD1BJ+zXE4eJ8vGMZ6lX1I0iJN+XXb5fY9Dg1xGuB3Hm0rIzkePP5w1nj7mgzZw3df4e/RtrnyJsi4+RKA0xzXZHbA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>ul6C/Mx3hd4dV5bk3mOr3csEBL7gLb2Ty5nReCBL1Tz8cVS88DGA6fU3KdqYEJHREaJ/szcjxjxmgxw9MiqquGLDFcI9hLMCj2mo+siTa7WVYq8kgnjZrqGravnoKtMpPVtoOqLOxaGd0FftKh/0lOzKbpzalQih/b4MKGgpD6U=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB5TCCAU6gAwIBAgIQPWGtO2vmz6dF/Yngb4kRwDANBgkqhkiG9w0BAQsFADAxMS8wLQYDVQQDHiYARABFAFMASwBUAE8AUAAtAFIAVgAxAEYATwBHAFAAXABOAGkAazAeFw0xODAyMjgxNTQ5NTRaFw0xOTAyMjgyMTQ5NTRaMDExLzAtBgNVBAMeJgBEAEUAUwBLAFQATwBQAC0AUgBWADEARgBPAEcAUABcAE4AaQBrMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC6XoL8zHeF3h1XluTeY6vdywQEvuAtvZPLmdF4IEvVPPxxVLzwMYDp9Tcp2pgQkdERon+zNyPGPGaDHD0yKqq4YsMVwj2EswKPaaj6yJNrtZVirySCeNmuoatq+egq0yk9W2g6os7FoZ3QV+0qH/SU7MpunNqVCKH9vgwoaCkPpQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAFzynK0FhkfzgmxxJ4PcmEHIl6LQfoQYUejwd+Ifuz3yrDeEq6sN6oifG9zU+dZSWauUJB+0RtRyETmAwDoM9LxBPhZU9FQ/oB1v9Q7VIspbtFZc0oLFL7b0nloA/QUEJx9ca5M4BQPpieV+i4ek0fqGLJjeIZIcS3/CdxOAX/uA</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

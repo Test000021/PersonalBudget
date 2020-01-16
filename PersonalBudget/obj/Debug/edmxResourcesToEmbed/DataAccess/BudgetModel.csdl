@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BudgetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Income">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountFk" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="BudgetModel.FK_Incomes_Accounts" FromRole="Income" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="Outgoing">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountFk" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="BudgetModel.FK_Outgoings_Accounts" FromRole="Outgoing" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="Saving">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountFk" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="BudgetModel.FK_Savings_Accounts" FromRole="Saving" ToRole="Account" />
+  </EntityType>
+  <EntityContainer Name="BudgetEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Incomes" EntityType="Self.Income" />
+    <EntitySet Name="Outgoings" EntityType="Self.Outgoing" />
+    <EntitySet Name="Savings" EntityType="Self.Saving" />
+    <EntitySet Name="Accounts" EntityType="BudgetModel.Account" />
+    <AssociationSet Name="FK_Incomes_Accounts" Association="BudgetModel.FK_Incomes_Accounts">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Income" EntitySet="Incomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outgoings_Accounts" Association="BudgetModel.FK_Outgoings_Accounts">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Outgoing" EntitySet="Outgoings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Savings_Accounts" Association="BudgetModel.FK_Savings_Accounts">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Saving" EntitySet="Savings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="KeyWord" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Incomes" Relationship="BudgetModel.FK_Incomes_Accounts" FromRole="Account" ToRole="Income" />
+    <NavigationProperty Name="Outgoings" Relationship="BudgetModel.FK_Outgoings_Accounts" FromRole="Account" ToRole="Outgoing" />
+    <NavigationProperty Name="Savings" Relationship="BudgetModel.FK_Savings_Accounts" FromRole="Account" ToRole="Saving" />
+  </EntityType>
+  <Association Name="FK_Incomes_Accounts">
+    <End Type="BudgetModel.Account" Role="Account" Multiplicity="1" />
+    <End Type="BudgetModel.Income" Role="Income" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Income">
+        <PropertyRef Name="AccountFk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outgoings_Accounts">
+    <End Type="BudgetModel.Account" Role="Account" Multiplicity="1" />
+    <End Type="BudgetModel.Outgoing" Role="Outgoing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Outgoing">
+        <PropertyRef Name="AccountFk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Savings_Accounts">
+    <End Type="BudgetModel.Account" Role="Account" Multiplicity="1" />
+    <End Type="BudgetModel.Saving" Role="Saving" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Saving">
+        <PropertyRef Name="AccountFk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

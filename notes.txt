@@ -1,0 +1,28 @@
+Title
+PersonalBudget - desktop application
+
+Summary
+A desktop application for your budget management
+
+Description
+PersonalBudget is a small windows forms desktop application,
+designed to manage your personal outgoings and income for certain period of time.
+You also can manage any savings by registering your data​ and obtain a set
+of charts that give you an image of your profit and expenses.
+ 
+Features
+.NET Framework 4.5.2
+Simple and attractive design
+User accounts
+Diagrams 
+Account management
+
+Requirements
+.NET Framework 4.5.2
+SQL Server database/MSSQL desirable 2017
+WINDOWS 7 or higher
+
+Instructions
+Restore the database backup from folder DatabaseBK, or you can build your own database based on the DB schema in the project
+You can run the setup from Setup folder or start the project
+Default credentials are usr: admin, psw: admin (only admin has user management rights).
